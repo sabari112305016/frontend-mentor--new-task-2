@@ -1,0 +1,71 @@
+*{box-sizing:border-box;margin:0;padding:0}
+body{background-color:#fff;font-family:"League Spartan",sans-serif}
+.header{position:absolute;top:0;left:0;right:0;z-index:10;max-width:1440px;margin:0 auto;padding:0 1.5em;padding-block:3em}
+/* .header__container{position:relative} */
+.header__menu-button{position:relative;background-color:rgba(0,0,0,0);border:none;padding:0;z-index:15}
+/* .header__menu-button--fixed{position:fixed} */
+.header__menu-icon{height:.875em;width:auto;display:block}
+.header__nav{transform:translateX(50%);background-color:#fff;width:100vw;padding:3em 1.5em;z-index:10;transition:top .45s ease-in-out}
+.header__nav--closed{top:-17%;transform:translateX(50%)}
+.header__nav-list{list-style:none;display:flex;justify-content:end;gap:1rem}
+.header__nav-link{text-decoration:none;color:#000;font-weight:600;text-transform:lowercase}
+.header__logo{position:absolute;right:50%;top:50%;transform:translateX(50%) translateY(-50%)}
+.header__logo-image{display:block;width:4em;height:auto}
+.nav{    
+display: flex;
+    justify-content: start;
+    align-items: center;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+.nav ul{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 20px;
+    list-style-type: none;
+    margin-left: 10px
+}
+.nav ul li a{
+    text-decoration: none;
+    color: white;
+}
+@media(min-width: 1024px){.header__menu-button{display:none}
+.header__container{display:flex;align-items:center;gap:2.5em}
+.header__logo{position:relative;top:unset;right:unset;transform:none}
+.header__nav{position:relative;width:auto;padding:0;top:unset;right:unset;transform:none;background-color:rgba(0,0,0,0)}
+.header__nav-list{gap:1.5em}.header__nav-list-item{cursor:pointer}
+.header__nav-link{color:#fff;display:inline-block;position:relative}
+.header__nav-link::before{content:"";position:absolute;bottom:-0.5em;left:50%;height:2px;width:60%;background-color:#fff;transform:translateX(-50%) scaleX(0);transform-origin:center;transition:transform .3s ease-in-out}
+.header__nav-link:hover::before{transform:translateX(-50%) scaleX(1)}}
+.hero{display:flex;flex-direction:column}
+.hero__image-container{position:relative;overflow-x:hidden}
+.hero__image-slider{display:flex;transition:transform .3s ease-in-out}
+.hero__image-picture{flex:0 0 100%}
+.hero__image{width:100%;height:auto;display:block}
+.hero__button-container{display:flex;justify-content:center;border:none;position:absolute;bottom:0;right:0}
+.hero__button{background-color:#000;border:none;padding:1.25em 1.5em;cursor:pointer}
+.hero__content{display:flex;flex-direction:column;gap:1.25em;padding:3.75em 1.5em}
+.hero__title{font-size:clamp(2.5em,4vw,3em);font-weight:600;letter-spacing:-0.04em;transition:opacity .3s ease}
+.hero__description{font-size:1em;color:hsl(0,0%,63%);transition:opacity .3s ease;letter-spacing:-0.02em;line-height:1.375em}
+.hero__shop-button{background-color:rgba(0,0,0,0);border:none;display:flex;gap:.5em;align-items:center;text-transform:uppercase;font-size:calc(1em - 1px);font-weight:500;letter-spacing:.82em;cursor:pointer}
+.hero__shop-icon{display:block}@media(min-width: 1024px){.hero{flex-direction:row;position:relative}
+.hero__image-container{position:static;flex:0 0 57.5%}
+.hero__button-container{left:57.5%;right:unset}
+.hero__button:disabled{cursor:not-allowed}
+.hero__button:hover{background-color:hsl(0,0%,27%)}
+.hero__shop-button:hover{color:hsl(0,0%,63%)}
+.hero__shop-button:hover .hero__shop-icon{filter:brightness(0) saturate(100%) invert(63%) sepia(0%) saturate(0%) hue-rotate(153deg) brightness(95%) contrast(92%)}
+.hero__content{align-self:center;margin:0 auto;max-width:25em;padding-inline:0}}
+.about{display:flex;flex-direction:column;gap:2.5em}
+.about__content{max-width:1440px;margin:0 auto;padding:0 1.5em;display:flex;flex-direction:column;gap:1.125em}
+.about__title{font-size:.875em;font-weight:600;letter-spacing:.44em;text-transform:uppercase}
+.about__description{font-size:1em;color:hsl(0,0%,63%);letter-spacing:-0.02em;line-height:1.375em}
+
+@media(min-width: 1024px){.about{flex-direction:row}
+.about__image{max-width:26.25em;height:auto;object-fit:cover}
+.about__content{align-self:center}}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border:0}
+.overlay{position:fixed;top:0;left:0;right:0;bottom:0;background-color:rgba(0,0,0,.5);opacity:0;transition:opacity .3s ease}
+.overlay--active{z-index:5;opacity:1;pointer-events:auto}@media(min-width: 1024px){.overlay{display:none}}.hidden{display:none}
